@@ -1,0 +1,127 @@
+body {
+  background-color: #d8b7ff; 
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+}
+
+.contenedor {
+  background-color: white;
+  border: 2px solid #e3a7c0;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  width: 270px;
+  position: relative;
+  z-index: 10;
+}
+
+.pregunta {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.botones {
+  margin: 10px 0;
+  position: relative;
+}
+
+button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.boton-si {
+  background-color: #ff7f7f;
+  color: white;
+}
+
+.boton-no {
+  background-color: #999;
+  color: white;
+  position: absolute;
+  transition: 0.2s;
+}
+
+.gatito {
+  width: 150px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.rosa {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  animation: caer 4s linear infinite;
+  z-index: 1;
+}
+
+@keyframes caer {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#mensajeFinal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: #e91e63;
+  font-weight: bold;
+  text-align: center;
+  z-index: 20;
+  display: none;
+  animation: zoomIn 1s ease-in-out forwards;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.2) translate(-50%, -50%); opacity: 0; }
+  to { transform: scale(1) translate(-50%, -50%); opacity: 1; }
+}
+.frase-que-cae {
+  position: absolute;
+  top: -50px;
+  color: #d63384;
+  font-weight: bold;
+  animation: caer-frase 4s linear forwards;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+@keyframes caer-frase {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
